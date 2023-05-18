@@ -1,5 +1,9 @@
 name: "Setup Kusto CLI"
 description: "Set up your GitHub Actions workflow with a specific version of the Kusto CLI"
+author: "philip-gai"
+branding:
+  icon: "play"
+  color: "blue"
 inputs:
   # Versions: https://www.nuget.org/packages/Microsoft.Azure.Kusto.Tools#versions-body-tab
   kusto-version:
