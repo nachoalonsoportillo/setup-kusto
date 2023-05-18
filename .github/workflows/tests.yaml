@@ -20,7 +20,7 @@ jobs:
           ]
     steps:
       - uses: actions/checkout@v3.5.2
-      - name: Run ${{github.repository}} with ${{ matrix.inputs.kusto-version }} on ${{ matrix.inputs.target-version }}
+      - name: Run action
         uses: ./
         with:
           kusto-version: ${{ matrix.inputs.kusto-version }}
