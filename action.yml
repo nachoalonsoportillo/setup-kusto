@@ -23,7 +23,7 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3.5.2
-    - run: download.sh "${{ inputs.kusto-version }}" "${{ inputs.target-version }}"
+    - run: ./download.sh "${{ inputs.kusto-version }}" "${{ inputs.target-version }}"
       shell: bash
     - name: Set output variables
       id: setup-kusto-output
