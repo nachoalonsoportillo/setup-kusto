@@ -5,13 +5,13 @@ inputs:
   kusto-version:
     description: "The exact version to use. Examples: 6.1.2, 7.2.1. Default is 7.2.1"
     default: "7.2.1"
-  tool-framework-version:
+  target-version:
     description: "The dotnet framework version of the tool to use. Examples: netcore, netcoreapp2.1, net5.0, net6.0. Default is netcore"
     default: "netcore"
 outputs:
   kusto-version:
     description: "The version of the Kusto CLI that was set up"
-  tool-framework-version:
+  target-version:
     description: "The dotnet framework version of the tool that was set up"
   kusto-cli-path:
     description: "The path on the runner to the Kusto CLI"
@@ -22,11 +22,11 @@ runs:
     - uses: actions/setup-dotnet@v3.0.3
       with:
         dotnet-version: "2.1.x"
-    - run: ./download.sh "${{ inputs.kusto-version }}" "${{ inputs.tool-framework-version }}"
+    - run: ./download.sh "${{ inputs.kusto-version }}" "${{ inputs.target-version }}"
       shell: bash
     - name: Set output variables
       run: |
         echo "kusto-version=${{ inputs.kusto-version }}" >>$GITHUB_OUTPUT
-        echo "tool-framework-version=${{ inputs.tool-framework-version }}" >>$GITHUB_OUTPUT
+        echo "target-version=${{ inputs.target-version }}" >>$GITHUB_OUTPUT
         echo "kusto-cli-path=${{ env.KUSTO_CLI_PATH }}" >>$GITHUB_OUTPUT
       shell: bash
