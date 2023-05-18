@@ -1,4 +1,4 @@
-name: "Setup Kusto"
+name: "Setup Kusto CLI"
 description: "Set up your GitHub Actions workflow with a specific version of the Kusto CLI"
 inputs:
   # Versions: https://www.nuget.org/packages/Microsoft.Azure.Kusto.Tools#versions-body-tab
