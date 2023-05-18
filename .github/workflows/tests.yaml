@@ -13,10 +13,14 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        inputs: [{ kusto-version: "7.2.1", target-version: netcore }]
+        inputs:
+          [
+            { kusto-version: "7.2.1", target-version: net6.0 },
+            { kusto-version: "11.3.1", target-version: net6.0 },
+          ]
     steps:
       - uses: actions/checkout@v3.5.2
-      - name: Run ${{github.repository}}
+      - name: Run ${{github.repository}} with ${{ matrix.inputs.kusto-version }} on ${{ matrix.inputs.target-version }}
         uses: ./
         with:
           kusto-version: ${{ matrix.inputs.kusto-version }}
