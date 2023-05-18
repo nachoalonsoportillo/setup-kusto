@@ -50,6 +50,4 @@ echo "Found $kusto_cli_path"
 if [ -n "$GITHUB_ENV" ]; then
   echo "Setting KUSTO_CLI_PATH environment variable"
   echo "KUSTO_CLI_PATH=$kusto_cli_path" >>$GITHUB_ENV
-  echo "Setting kusto-cli-path output variable"
-  echo "kusto-cli-path=$kusto_cli_path" >>$GITHUB_OUTPUT
 fi
