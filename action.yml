@@ -1,0 +1,19 @@
+name: "Setup Kusto"
+description: "Set up your GitHub Actions workflow with a specific version of the Kusto CLI"
+inputs:
+  # Versions: https://www.nuget.org/packages/Microsoft.Azure.Kusto.Tools#versions-body-tab
+  kusto-version:
+    description: "The exact version to use. Examples: 6.1.2, 7.2.1. Default is 7.2.1"
+    default: "7.2.1"
+  tool-framework-version:
+    description: "The dotnet framework version of the tool to use. Examples: netcore, netcoreapp2.1, net5.0, net6.0. Default is netcore"
+    default: "netcore"
+outputs:
+  kusto-cli-path:
+    description: "The path on the runner to the Kusto CLI"
+runs:
+  using: "composite"
+  steps:
+    - name: actions/checkout@v3.5.2
+    - run: download.sh "${{ inputs.kusto-version }}" "${{ inputs.tool-framework-version }}"
+      shell: bash
