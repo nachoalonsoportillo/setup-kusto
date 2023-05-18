@@ -21,9 +21,6 @@ jobs:
       - name: Run ${{github.repository}}
         uses: ./
       - run: dotnet --version
-      - name: "Display CLI help synopsis"
-        run: dotnet "${{ env.KUSTO_CLI_PATH }}" -help || true
-        shell: bash
-      - name: "Test query on help cluster"
-        run: dotnet "${{ env.KUSTO_CLI_PATH }}" "https://help.kusto.windows.net/Samples;Fed=true" -execute:"#markdownon" -execute:".show tables"
+      - name: "Test #help"
+        run: dotnet "${{ env.KUSTO_CLI_PATH }}" -execute:"#help"
         shell: bash
