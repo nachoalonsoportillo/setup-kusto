@@ -22,6 +22,6 @@ jobs:
         uses: ./
       - run: dotnet --version
       - name: "Display CLI help synopsis"
-        run: dotnet "${{ env.KUSTO_CLI_PATH }}" -help
+        run: dotnet "${{ env.KUSTO_CLI_PATH }}"
       - name: "Connect to help cluster"
         run: dotnet "${{ env.KUSTO_CLI_PATH }}" "https://help.kusto.windows.net/Samples;Fed=true"
