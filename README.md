@@ -17,3 +17,10 @@ For older versions of the Kusto CLI that do not target Dotnet 6, you will have t
           kusto-version: "6.0.1"
           target-version: netcoreapp2.1
   ```
+
+Once the Kusto CLI is installed, you can use it in your workflow like so:
+
+  ```yaml
+      - run: dotnet "${{ env.KUSTO_CLI_PATH }}" -execute:"#help"
+        shell: bash
+  ```
