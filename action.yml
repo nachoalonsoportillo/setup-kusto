@@ -19,6 +19,9 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3.5.2
+    - uses: actions/setup-dotnet@v3.0.3
+      with:
+        dotnet-version: "2.1.x"
     - run: ./download.sh "${{ inputs.kusto-version }}" "${{ inputs.tool-framework-version }}"
       shell: bash
     - name: Set output variables
