@@ -17,13 +17,11 @@ jobs:
       - uses: actions/checkout@v3.5.2
       - uses: actions/setup-dotnet@v3.0.3
         with:
-          dotnet-version: '2.1.x'
+          dotnet-version: "2.1.x"
       - name: Run ${{github.repository}}
         uses: ./
       - run: dotnet --version
-      - name: "Display help"
-        run: |
-          dotnet "${{ env.KUSTO_CLI_PATH }}" /help
-      - name: "Connect to help"
-        run: |
-          dotnet "${{ env.KUSTO_CLI_PATH }}" "https://help.kusto.windows.net/Samples;Fed=true"
+      - name: "Display CLI help synopsis"
+        run: dotnet "${{ env.KUSTO_CLI_PATH }}" -help
+      - name: "Connect to help cluster"
+        run: dotnet "${{ env.KUSTO_CLI_PATH }}" "https://help.kusto.windows.net/Samples;Fed=true"
