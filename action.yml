@@ -26,3 +26,4 @@ runs:
         echo "kusto-version=${{ inputs.kusto-version }}" >>$GITHUB_OUTPUT
         echo "tool-framework-version=${{ inputs.tool-framework-version }}" >>$GITHUB_OUTPUT
         echo "kusto-cli-path=${{ env.KUSTO_CLI_PATH }}" >>$GITHUB_OUTPUT
+      shell: bash
