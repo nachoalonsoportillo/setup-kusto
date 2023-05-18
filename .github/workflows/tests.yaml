@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-action:
-    name: "Test setup-kusto on ${{ matrix.os }}"
+    name: "Test ${{github.repository}} with ${{ matrix.inputs.kusto-version }} on ${{ matrix.inputs.target-version }}"
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
