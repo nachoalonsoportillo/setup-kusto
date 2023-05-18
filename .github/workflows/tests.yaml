@@ -13,10 +13,14 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        inputs: [{ kusto-version: "7.2.1", target-version: netcore }]
     steps:
       - uses: actions/checkout@v3.5.2
       - name: Run ${{github.repository}}
         uses: ./
+        with:
+          kusto-version: ${{ matrix.inputs.kusto-version }}
+          target-version: ${{ matrix.inputs.target-version }}
       - name: "Test #help"
         run: dotnet "${{ env.KUSTO_CLI_PATH }}" -execute:"#help"
         shell: bash
