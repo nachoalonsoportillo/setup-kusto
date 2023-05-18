@@ -14,6 +14,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: actions/checkout@v3.5.2
+    - use: actions/checkout@v3.5.2
     - run: download.sh "${{ inputs.kusto-version }}" "${{ inputs.tool-framework-version }}"
       shell: bash

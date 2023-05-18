@@ -14,11 +14,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - name: Checkout composite actions repository
-        uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
         with:
           repository: philip-gai/setup-kusto
           path: setup-kusto
           ref: ${{ github.ref }}
-      - name: Setup Kusto
-        uses: ./setup-kusto
+      - uses: ./setup-kusto
