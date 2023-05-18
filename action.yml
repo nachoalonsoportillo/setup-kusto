@@ -25,7 +25,8 @@ runs:
     - uses: actions/checkout@v3.5.2
       with:
         repository: philip-gai/setup-kusto
-    - run: ./download.sh "${{ inputs.kusto-version }}" "${{ inputs.target-version }}"
+        path: setup-kusto
+    - run: ./setup-kusto/download.sh "${{ inputs.kusto-version }}" "${{ inputs.target-version }}"
       shell: bash
     - name: Set output variables
       id: setup-kusto-output
