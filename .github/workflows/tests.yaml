@@ -15,4 +15,5 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v3.5.2
-      - uses: ./
+      - name: ${{github.repository}}
+        uses: ./
