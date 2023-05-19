@@ -29,7 +29,7 @@ runs:
     - run: ./setup-kusto/download.sh "${{ inputs.kusto-version }}" "${{ inputs.target-version }}"
       shell: bash
     - name: Set output variables
-      id: setup-kusto-output
+      id: setup-kusto
       run: |
         echo "kusto-version=${{ inputs.kusto-version }}" >>$GITHUB_OUTPUT
         echo "target-version=${{ inputs.target-version }}" >>$GITHUB_OUTPUT
