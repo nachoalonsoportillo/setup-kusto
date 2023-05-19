@@ -4,6 +4,8 @@
 
 Set up your GitHub Actions workflow with a specific version of the Kusto CLI.
 
+## Usage
+
 By default this action will install Kusto CLI version 11.3.1 which requires Dotnet 6. As of 2023-05-18, Dotnet 6 is installed by default on all of the latest GitHub-hosted runners, so you should not need to do any other manual setup.
 
 For older versions of the Kusto CLI that do not target Dotnet 6, you will have to make sure you setup the required version of Dotnet yourself. For example, for Kusto CLI version 6.0.1, you will need to add the following to your workflow:
