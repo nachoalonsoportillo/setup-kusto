@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/philip-gai/setup-kusto/actions/workflows/tests.yaml/badge.svg)](https://github.com/philip-gai/setup-kusto/actions/workflows/tests.yaml)
 
-Set up your GitHub Actions workflow with a specific version of the Kusto CLI.
+Set up your GitHub Actions workflow with a specific version of the Azure Data Explorer [Kusto CLI](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-cli).
 
 ## Usage
 
