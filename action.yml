@@ -11,7 +11,7 @@ inputs:
     default: "12.2.0"
   target-version:
     description: "The dotnet framework version of the tool to use. Examples: netcore, netcoreapp2.1, net5.0, net6.0"
-    default: "netcore"
+    default: "net6.0"
 outputs:
   kusto-version:
     description: "The version of the Kusto CLI that was set up"
